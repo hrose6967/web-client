@@ -68,10 +68,6 @@ pre {
 	overflow: auto;
 }
 
-.navbar {
-	text-align: center;
-}
-
 .topbutton {
 	float: right;
 }
@@ -89,14 +85,6 @@ pre {
 	position: relative;
 	margin-left: auto;
 	margin-right: auto;
-}
-
-.game-buttons {
-	text-align: center;
-}
-
-.game-forms {
-	text-align: center;
 }
 
 .messages {
@@ -160,7 +148,8 @@ pre {
 	overflow: scroll;
 }
 
-.answers {
+/* Can combind */
+.answers, .game-forms,  .game-buttons, .navbar { 
 	text-align: center;
 }
 
@@ -246,6 +235,7 @@ img.bg {
     <div class="game-buttons">
       <button onclick="shuffle()">Shuffle letters</button>
       <button onclick="delete_letter()">Delete</button>
+	  <button onclick="clear_letters()">Clear</button>
     </div>
 
     <br />
@@ -935,6 +925,12 @@ img.bg {
 
 	str = str.slice(0, len - 1) + str.slice(len, len);
 	document.getElementById("guess").value = str;
+      }
+
+	  function clear_letters() {
+	var str = document.getElementById("guess").value;
+
+	document.getElementById("guess").value = "";
       }
     </script>
 
